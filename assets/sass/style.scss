@@ -1,4 +1,6 @@
 /* -------PATTISJOKKI RIPAN.SE---------- */
+
+/* Fetching custom fonts */
 @font-face {
   font-family: "AmericanTypewriter";
   src: url("./fonts/AmericanTypewriter.ttf") format("truetype");
@@ -10,25 +12,27 @@
 
 body {
   background: {
-    // image: url("./images/paperBody.jpg");
-    // size: 100vw auto;
-    // repeat: repeat;
-    // attachment: fixed;
-    color: #423b21;
+    image: url("./images/paperBody.jpg");
+    size: 100vw auto;
+    repeat: repeat;
+    attachment: fixed;
   }
   margin: 0;
 }
 
+/* All MenuPage content */
 .pattisjokkiMenu__Wrapper {
   min-height: 100vh;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: {
+    top: 80px;
+    // bottom: 25px;
+  }
   background: {
-    // image: url("./images/paperWrapper.jpg");
-    // repeat: repeat;
-    // size: 1000px auto;
-    color: #958958;
+    image: url("./images/paperWrapper.jpg");
+    repeat: repeat;
+    size: 1000px auto;
   }
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -41,6 +45,7 @@ body {
     max-width: 100%;
   }
 
+  /* Divider Images */
   .menuImage--full {
     grid-column: 1 / -1;
   }
@@ -64,6 +69,7 @@ body {
   .menuImage--wideSpan--left {
     grid-column: 1 / span 8;
   }
+  /* End Divider Images */
 
   .pattisjokkiMenu__PageHeading {
     font: {
@@ -96,51 +102,46 @@ body {
 
   .pattisjokkiMenu__Footer {
     grid-column: 1 / -1;
-    margin-top: 80px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-    grid-gap: 25px;
+    grid-gap: 5px;
     margin: {
-      left: 100px;
-      right: 100px;
+      left: 50px;
+      right: 50px;
     }
     .pattisjokkiMenu__FooterInfo {
       grid-column: 1 / -1;
       font-family: "AmericanTypewriter";
+      margin: {
+        bottom: 12px;
+        top: 80px;
+      }
     }
 
-    // .footerImage {
-    //   transition: 0.5s;
-    // }
-    // .footerImage:hover {
-    //   transform: scale(1.5);
-    // }
-
     .footerImage {
+      -webkit-transition: 1s;
       transition: 1s;
       position: relative;
-      // width: 400px;
-      // margin-bottom: 250px;
+      img {
+        padding-top: 15px;
+        max-height: 50px;
+      }
       .content {
-        // position: absolute;
-        // bottom: 0;
-        // right: 0;
-        // top: 0;
+        -webkit-transform: translateY(0);
         transform: translateY(0);
         margin: auto;
         padding: 0;
         z-index: 2;
-        // height: 3em;
+        -webkit-transition: all 1s ease;
         transition: all 1s ease;
       }
       p {
-        // height: 0;
         opacity: 0;
         visibility: hidden;
         line-height: 1.5em;
         font-family: "AmericanTypewriter";
-        font-size: 13px;
+        font-size: 11px;
         padding: {
           left: 8px;
           right: 8px;
@@ -149,17 +150,20 @@ body {
       }
       &:hover {
         .content {
-          // height: 150%;
+          -webkit-transition: all 1s ease;
           transition: all 1s ease;
+          -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
 
-          background: rgba(255, 255, 255, 0.4);
-          border: 4px solid pink;
+          background: rgba(255, 255, 255, 0.3);
+          -webkit-box-shadow: 0px 20px 50px #555;
+          box-shadow: 0px 20px 50px #555;
+          border-radius: 5px;
         }
         p {
-          // height: 3em;
           opacity: 1;
           visibility: visible;
+          -webkit-transition: all 1s ease;
           transition: all 1s ease;
         }
       }
@@ -177,154 +181,8 @@ body {
     .footerImage4 {
       grid-column: 4 / span 1;
     }
-  }
-  .pattisjokkiMenu__FooterCards {
-    grid-column: 1 / -1;
-    height: 400px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    .card {
-      // position: absolute;
-      // top: 10%;
-      // left: 40%;
-      width: 100%;
-      height: 450px;
-      perspective: 900px;
-    }
-    .card1 {
-      grid-column: 1 / span 3;
-      .image {
-        background: linear-gradient(to top, #eba65b 30%, #d99267 100%);
-      }
-      .story {
-        background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
-      }
-    }
-    .card2 {
-      grid-column: 4 / span 3;
-      .image {
-        background: linear-gradient(to top, #6c76ba 30%, #666094 100%);
-      }
-      .story {
-        background: linear-gradient(to bottom, #6c76ba 0%, #666094 40%);
-      }
-    }
-    .card3 {
-      grid-column: 7 / span 3;
-      .image {
-        background: linear-gradient(to top, #eba65b 30%, #d99267 100%);
-      }
-      .story {
-        background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
-      }
-    }
-    .card4 {
-      grid-column: 10 / span 3;
-      .image {
-        background: linear-gradient(to top, #6c76ba 30%, #666094 100%);
-      }
-      .story {
-        background: linear-gradient(to bottom, #6c76ba 0%, #666094 40%);
-      }
-    }
-
-    .container {
-      // position: absolute;
-      // top: 0%;
-      width: 100%;
-      height: 100%;
-      transition: 0.5s all ease;
-      transform: rotateX(60deg) scale(0.7);
-      box-shadow: 0px 20px 50px #555;
-      animation: entry 1s linear 1;
-    }
-
-    .container:hover {
-      cursor: pointer;
-      transform: rotate(0deg) scale(0.9) translateY(10px) skew(0, 0);
-      transition: 0.5s all ease;
-      z-index: 400;
-      p {
-        color: black;
-        text-shadow: none;
-      }
-    }
-
-    .image {
-      // position: absolute;
-      // top: 0%;
-      // left: 0%;
-      width: 100%;
-      height: 45%;
-      display: grid;
-      justify-items: center;
-      img {
-        width: 80%;
-        z-index: 1;
-      }
-    }
-
-    .story {
-      position: absolute;
-      top: 45%;
-      left: 0%;
-      height: 55%;
-      width: 100%;
-      z-index: 30;
-    }
-
-    .info {
-      position: absolute;
-      top: 10%;
-    }
-
-    h3 {
-      text-align: center;
-      color: black;
-      letter-spacing: 2px;
-    }
-
-    p {
-      font-size: 14px;
-      color: #fff;
-      padding: 0px 20px 20px 20px;
-      line-height: 150%;
-      text-align: center;
-      letter-spacing: 1px;
-      color: transparent;
-      text-shadow: 0 0 4px #000;
-      transition: 1s;
-    }
-
-    @keyframes entry {
-      0% {
-        top: -20%;
-        opacity: 0.1;
-      }
-      100% {
-        top: 0%;
-      }
-    }
-  }
-  @media only screen and (max-width: 900px) {
-    .pattisjokkiMenu__FooterCards {
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: 1fr 1fr;
-      grid-gap: 50px;
-      .card1 {
-        grid-column: 1 / span 3;
-      }
-      .card2 {
-        grid-column: 4 / span 3;
-      }
-      .card3 {
-        grid-column: 1 / span 3;
-        grid-row: 2 / span 1;
-      }
-      .card4 {
-        grid-column: 4 / span 3;
-        grid-row: 2 / span 1;
-      }
+    .footerImage5 {
+      grid-column: 5 / span 1;
     }
   }
 }
