@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.5.0",
     "browser-sync": "^2.24.5",
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.1.0",

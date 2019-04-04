@@ -111,13 +111,12 @@ body {
     }
 
     // .footerImage {
-    //   transition: 0.5s;
-    // }
+    //   transition: 0.5s;}
     // .footerImage:hover {
-    //   transform: scale(1.5);
-    // }
+    //   transform: scale(1.5);}
 
     .footerImage {
+      -webkit-transition: 1s;
       transition: 1s;
       position: relative;
       // width: 400px;
@@ -127,11 +126,13 @@ body {
         // bottom: 0;
         // right: 0;
         // top: 0;
+        -webkit-transform: translateY(0);
         transform: translateY(0);
         margin: auto;
         padding: 0;
         z-index: 2;
         // height: 3em;
+        -webkit-transition: all 1s ease;
         transition: all 1s ease;
       }
       p {
@@ -150,7 +151,9 @@ body {
       &:hover {
         .content {
           // height: 150%;
+          -webkit-transition: all 1s ease;
           transition: all 1s ease;
+          -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
 
           background: rgba(255, 255, 255, 0.4);
@@ -160,6 +163,7 @@ body {
           // height: 3em;
           opacity: 1;
           visibility: visible;
+          -webkit-transition: all 1s ease;
           transition: all 1s ease;
         }
       }
@@ -189,41 +193,50 @@ body {
       // left: 40%;
       width: 100%;
       height: 450px;
+      -webkit-perspective: 900px;
       perspective: 900px;
     }
     .card1 {
       grid-column: 1 / span 3;
       .image {
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #eba65b), to(#d99267));
         background: linear-gradient(to top, #eba65b 30%, #d99267 100%);
       }
       .story {
+        background: -webkit-gradient(linear, left top, left bottom, from(#eba65b), color-stop(40%, #d99267));
         background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
       }
     }
     .card2 {
       grid-column: 4 / span 3;
       .image {
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #6c76ba), to(#666094));
         background: linear-gradient(to top, #6c76ba 30%, #666094 100%);
       }
       .story {
+        background: -webkit-gradient(linear, left top, left bottom, from(#6c76ba), color-stop(40%, #666094));
         background: linear-gradient(to bottom, #6c76ba 0%, #666094 40%);
       }
     }
     .card3 {
       grid-column: 7 / span 3;
       .image {
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #eba65b), to(#d99267));
         background: linear-gradient(to top, #eba65b 30%, #d99267 100%);
       }
       .story {
+        background: -webkit-gradient(linear, left top, left bottom, from(#eba65b), color-stop(40%, #d99267));
         background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
       }
     }
     .card4 {
       grid-column: 10 / span 3;
       .image {
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #6c76ba), to(#666094));
         background: linear-gradient(to top, #6c76ba 30%, #666094 100%);
       }
       .story {
+        background: -webkit-gradient(linear, left top, left bottom, from(#6c76ba), color-stop(40%, #666094));
         background: linear-gradient(to bottom, #6c76ba 0%, #666094 40%);
       }
     }
@@ -233,15 +246,21 @@ body {
       // top: 0%;
       width: 100%;
       height: 100%;
+      -webkit-transition: 0.5s all ease;
       transition: 0.5s all ease;
+      -webkit-transform: rotateX(60deg) scale(0.7);
       transform: rotateX(60deg) scale(0.7);
+      -webkit-box-shadow: 0px 20px 50px #555;
       box-shadow: 0px 20px 50px #555;
+      -webkit-animation: entry 1s linear 1;
       animation: entry 1s linear 1;
     }
 
     .container:hover {
       cursor: pointer;
+      -webkit-transform: rotate(0deg) scale(0.9) translateY(10px) skew(0, 0);
       transform: rotate(0deg) scale(0.9) translateY(10px) skew(0, 0);
+      -webkit-transition: 0.5s all ease;
       transition: 0.5s all ease;
       z-index: 400;
       p {
@@ -293,7 +312,18 @@ body {
       letter-spacing: 1px;
       color: transparent;
       text-shadow: 0 0 4px #000;
+      -webkit-transition: 1s;
       transition: 1s;
+    }
+
+    @-webkit-keyframes entry {
+      0% {
+        top: -20%;
+        opacity: 0.1;
+      }
+      100% {
+        top: 0%;
+      }
     }
 
     @keyframes entry {
